@@ -63,6 +63,7 @@ def on_disconnect():
     })
 
 links=[]
+imageLinks=[]
 @socketio.on('new input')
 def on_new_input(data):
     print("Got an event for new address input with data:", data)
@@ -82,6 +83,12 @@ def on_new_input(data):
         links.append(clickable)
         socketio.emit('new input', {
         'test': links
+    })
+    imageLink=(re.findall(r".+\.jpg", info))
+    if(imageLink):
+        imageLinks.append(imageLink)
+        socketio.emit('new image', {
+        'tests': imageLinks
     })
         
     db.session.commit();
