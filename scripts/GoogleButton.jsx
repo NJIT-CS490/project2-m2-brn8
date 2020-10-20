@@ -14,6 +14,7 @@ import { Content } from './Content';
         'address': name+' ('+email+') :',
     });
     
+    
     console.log('Sent the name ' + name +' and email '+email+ ' to the server!');
     ReactDOM.render(<Content />, document.getElementById('content'));
 }
