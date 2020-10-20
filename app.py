@@ -95,7 +95,7 @@ def on_new_input(data):
     
     emit_all_addresses(ADDRESSES_RECEIVED_CHANNEL)
 
-@socketio.on('new username')
+@socketio.on('new image')
 def new_username(data):
     print("Got an event for new address input with data:", data)
     

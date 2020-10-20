@@ -7,13 +7,12 @@ import { Content } from './Content';
 
  function responseGoogle(response) {
     // TODO replace with name from oauth
-    let name = response.nt.Ad;
-    let email = response.nt.Wt;
+    let name = response.profileObj.name;
+    let email = response.profileObj.email;
     let url = response.profileObj.imageUrl;
     Socket.emit('new username', {
         'address': name+' ('+email+') :',
     });
-    
     
     console.log('Sent the name ' + name +' and email '+email+ ' to the server!');
     ReactDOM.render(<Content />, document.getElementById('content'));
