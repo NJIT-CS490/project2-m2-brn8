@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Content } from './Content';
+import { Content_auth } from './Content_auth';
 
-ReactDOM.render(<Content />, document.getElementById('content'));
+ReactDOM.render(<Content_auth />, document.getElementById('content'));
