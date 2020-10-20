@@ -1,0 +1,79 @@
+body{
+    background-image: linear-gradient(lightblue, blue);
+}
+h1 {
+  font-family: Times;
+  text-align: center;
+  
+}
+h2 {
+  font-family: Times;
+  text-align: center;
+  background-color: grey;
+  position: fixed;
+  left: 70px;
+  height: 60px;
+  width: 350px;
+}
+p1{
+  font-family: Times;
+  text-align: center;
+  background-color: grey;
+  position: fixed;
+  left: 70px;
+  top: 120px;
+  height: 60px;
+  width: 350px;
+
+}
+
+ol{
+  background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+  position: fixed;
+  padding-top: 25px;
+  left: 440px;
+  height: 420px;
+  width: 50%;
+  font-size: 19px;
+  font-family: Arial;
+  overflow: scroll;
+  
+}
+p{
+  position: fixed;
+  bottom: 68px;
+  left: 440px;
+  font-size: 25px;
+  font-family: Arial;
+  
+}
+input[id=username]{
+  position: fixed;
+  bottom: 85px;
+  left: 565px;
+  padding: 10px;
+}
+input[id=username]:focus {
+  background-color: lightblue;
+}
+input[id=input]{
+  position: fixed;
+  bottom: 22px;
+  left: 440px;
+  width: 40%;
+  padding: 20px;
+}
+input[id=input]:focus {
+  background-color: lightblue;
+}
+button{
+  position: fixed;
+  bottom: 22px;
+  left: 1000px;
+  width: 10%;
+  padding: 20px;
+  background-color: green;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}
