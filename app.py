@@ -6,6 +6,7 @@ import flask
 import flask_sqlalchemy
 import flask_socketio
 import models 
+import re
 
 ADDRESSES_RECEIVED_CHANNEL = 'addresses received'
 
@@ -61,6 +62,7 @@ def on_disconnect():
         'test': finalCount
     })
 
+links=[]
 @socketio.on('new input')
 def on_new_input(data):
     print("Got an event for new address input with data:", data)
@@ -73,6 +75,14 @@ def on_new_input(data):
     if info == '!! help':
         txt_help="Sawan(Bot): There are more commands you can use like !! funtranslate and !! about.";
         db.session.add(models.Usps(txt_help));
+    
+    link=(re.findall(r'(https?://[^\s]+)', info))
+    if (link):
+        clickable=link
+        links.append(clickable)
+        socketio.emit('new input', {
+        'test': links
+    })
         
     db.session.commit();
     

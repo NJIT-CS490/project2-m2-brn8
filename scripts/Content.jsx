@@ -6,6 +6,7 @@ import { Socket } from './Socket';
 export function Content() {
     const [addresses, setAddresses] = React.useState([]);
     const [count, setCount] = React.useState([]);
+    const [link, setLink] = React.useState([]);
     
     function getNewAddresses() {
         React.useEffect(() => {
@@ -40,6 +41,16 @@ export function Content() {
         });
     }
     getCount_disconnect();
+    
+    function clickable() {
+        React.useEffect(() => {
+            Socket.on('new input', (data) => {
+                 console.log("Received user disconnected count from server: " + data['test']);
+                 setLink(data['test']);
+            })
+        });
+    }
+    clickable();
 
     return (
         <div>
@@ -48,6 +59,10 @@ export function Content() {
                     {
                     addresses.map((address, index)=>
                         <div key={index}>{address} </div>)
+                    }
+                    {
+                    link.map((test, index)=>
+                        <div key={index}><a href={test}>{test}</a> </div>  )
                     }
                 </ol>
                 <h2>Total Users Connected: {count}</h2>
