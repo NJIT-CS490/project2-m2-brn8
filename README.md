@@ -1,5 +1,5 @@
 Project 2 Milestone 2 Documentation:
-1.	Git clone Milestone 1 and push it into NJIT-CS490 organization naming project2-m2-<username>
+1.	Git clone Milestone 1 and push it into NJIT-CS490 organization naming project2-m2-username
 2.	Use your personal google account and go to  https://console.developers.google.com/ and follow the following steps:
   •	Click CREATE PROJECT and name the project that you have created. 
   •	Click Credentials and then click OAuth client ID
